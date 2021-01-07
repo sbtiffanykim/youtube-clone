@@ -8,4 +8,4 @@ export const userDetail = (req, res) =>
 export const editProfile = (req, res) =>
   res.render("EditProfile", { pageTitle: "editProfile" });
 export const changePassword = (req, res) =>
-  res.render("Change Password", { pageTitle: "changePassword" });
+  res.render("ChangePassword", { pageTitle: "changePassword" });
