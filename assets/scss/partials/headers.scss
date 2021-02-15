@@ -1,0 +1,76 @@
+header {
+  margin-bottom: 40px;
+  .header__wrapper {
+    padding: 10px 25px;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 50px 200px 3fr 1fr;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    .header__column {
+      i {
+        font-size: 20px;
+      }
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      .wetube__btn {
+        color: red;
+        font-size: 25px;
+      }
+      .wetube__text {
+        font-weight: 700;
+        font-size: 23px;
+        color: black;
+        display: inline-block;
+        transform: scale(0.9, 1);
+      }
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          margin: 0 10px;
+        }
+      }
+      form {
+        width: 100%;
+        display: flex;
+        input {
+          width: 80%;
+          padding: 5px 7px;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
+          font-size: 16px;
+        }
+        input:focus {
+          outline: none;
+          border: 1px solid #2980b9;
+        }
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.7);
+        }
+        button {
+          padding: 7px 25px;
+          outline: none;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-left: none;
+          border-radius: 3px;
+          background-color: #ecf0f1;
+          .search__icon {
+            font-size: 14px;
+            color: #7f8c8d;
+          }
+        }
+        button:hover {
+          cursor: pointer;
+          .search__icon {
+            color: rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+    }
+  }
+}

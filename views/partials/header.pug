@@ -1,21 +1,31 @@
 header.header
-    .header__column
-        a(href=routes.home)
-            i.fab.fa-youtube
-    .header__column
-        form(action=routes.search method="GET")
-            input(type="text", placeholder="Search by term", name="term")
-    .header__column
-        ul
-            if !user.isAuthenticated
-                li
-                    a(href=routes.join) Join
-                li
-                    a(href=routes.login) Log In
-            else
-                li
-                    a(href=`/videos${routes.upload}`) Upload
-                li
-                    a(href=routes.userDetail(user.id)) Profile
-                li
-                    a(href=routes.logout) Log Out
+    .header__wrapper
+        .header__column
+            i.fas.fa-bars
+        .header__column
+            a(href=routes.home)
+                i.fab.fa-youtube.wetube__btn
+                span.wetube__text WETUBE
+        .header__column
+            form(action=routes.search method="GET")
+                input(type="text", placeholder="Search", name="term")
+                button(type="submit") 
+                    i.fas.fa-search.search__icon
+        .header__column
+            ul
+                if !user.isAuthenticated
+                    li
+                        a(href=routes.join) Join
+                    li
+                        a(href=routes.login) Log In
+                else
+                    li
+                        a(href=`/videos${routes.upload}`) Upload
+                            i.fas.fa-video
+                    li
+                        i.fas.fa-bell 
+                        span notification
+                    li
+                        a(href=routes.userDetail(user.id)) Profile
+                    li
+                        a(href=routes.logout) Log Out
