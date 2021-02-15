@@ -18,7 +18,8 @@
     "pug": "^3.0.0"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node init.js"
+    "dev:server": "nodemon --exec babel-node init.js --delay 2",
+    "dev:assets": "webpack"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
@@ -27,6 +28,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
   }
 }
