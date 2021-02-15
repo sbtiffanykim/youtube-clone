@@ -44,14 +44,17 @@ header {
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 3px;
           font-size: 16px;
+          &:focus {
+            outline: none;
+            border: 1px solid #2980b9;
+          }
+          &::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 15px;
+            font-weight: 600;
+          }
         }
-        input:focus {
-          outline: none;
-          border: 1px solid #2980b9;
-        }
-        &::placeholder {
-          color: rgba(0, 0, 0, 0.7);
-        }
+
         button {
           padding: 7px 25px;
           outline: none;
@@ -63,11 +66,11 @@ header {
             font-size: 14px;
             color: #7f8c8d;
           }
-        }
-        button:hover {
-          cursor: pointer;
-          .search__icon {
-            color: rgba(0, 0, 0, 0.7);
+          &:hover {
+            cursor: pointer;
+            .search__icon {
+              color: rgba(0, 0, 0, 0.7);
+            }
           }
         }
       }
