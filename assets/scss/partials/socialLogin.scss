@@ -1,0 +1,37 @@
+.social-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  button {
+    padding: 14px 28px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 3px 1px 1px $dark-grey;
+    &:first-child {
+      margin-right: 3px;
+    }
+    span {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    &:hover {
+      opacity: 90%;
+      cursor: pointer;
+    }
+  }
+}
+
+.social-login--github {
+  background-color: $black;
+  color: white;
+}
+.social-login--kakao {
+  background-color: #f1c40f;
+  color: white;
+}

@@ -2,10 +2,19 @@ extends layouts/main.pug
 
 block content
     .form-container
-        form(action=routes.join, method="POST")
-            input(type="text", name="name", placeholder="Full Name", required=true)
-            input(type="email", name="email", placeholder="Email", required=true)
-            input(type="password", name="password", placeholder="Password", required=true)
-            input(type="password", name="password2", placeholder="Verify Password", required=true)
-            input(type="submit", value="Create Account")
         include partials/socialLogin
+        h3.join__text Or Sign up with 
+        form(action=routes.join, method="POST")
+            .input-icons 
+                i.fas.fa-user-alt
+                input(type="text", name="name", placeholder="Full Name", required=true)
+            .input-icons 
+                i.fas.fa-envelope                
+                input(type="email", name="email", placeholder="Email", required=true)
+            .input-icons 
+                i.fas.fa-key       
+                input(type="password", name="password", placeholder="Password", required=true)
+            .input-icons 
+                i.fas.fa-key           
+                input(type="password", name="password2", placeholder="Verify Password", required=true)
+            input(type="submit", value="Create Account")
