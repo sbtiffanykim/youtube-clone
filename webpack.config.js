@@ -52,6 +52,7 @@ const config = {
     filename: "[name].js",
   },
   plugins: [new ExtractCSS("styles.css")],
+  devtool: "source-map",
 };
 
 module.exports = config;
