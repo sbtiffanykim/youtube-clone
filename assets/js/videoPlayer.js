@@ -5,8 +5,10 @@ const playBtn = document.getElementById("jsPlayButton");
 function handlePlayClick() {
   if (videoPlayer.paused) {
     videoPlayer.play();
+    videoPlayer.innerHTML = '<i class="fas fa-play"></i>';
   } else {
     videoPlayer.pause();
+    videoPlayer.innerHTML = '<i class="fas fa-pause"></i>';
   }
 }
 

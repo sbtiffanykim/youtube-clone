@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
 const CommentSchema = new mongoose.Schema({
-    text: {
-        type: String,
-        required: "Comment is required"
-    },
-    createAt: {
-        type: Date,
-        default: Date.now,
-        required: "Comment is required"
-    } 
+  text: {
+    type: String,
+    required: "Text is required",
+  },
+  createAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const model = mongoose.model("Comment", CommentSchema);
+
 export default model;
