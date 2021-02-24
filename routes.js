@@ -74,6 +74,8 @@ const routes = {
   githubCallback: GITHUB_CALLBACK,
   kakao: KAKAO,
   kakaoCallback: KAKAO_CALLBACK,
+  naver: NAVER,
+  naverCallback: NAVER_CALLBACK,
   me: ME,
 };
 

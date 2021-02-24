@@ -12,9 +12,13 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    box-shadow: 3px 1px 1px $dark-grey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     &:first-child {
-      margin-right: 3px;
+      margin-right: 8px;
+    }
+    &:nth-child(2) {
+      margin-right: 8px;
     }
     span {
       font-size: 20px;
@@ -35,7 +39,17 @@
   background-color: $black;
   color: white;
 }
+
 .social-login--kakao {
   background-color: #f1c40f;
   color: white;
+}
+
+.social-login--naver {
+  background-color: #1ec800;
+  color: white;
+  i {
+    font-size: 16px;
+    font-weight: 800;
+  }
 }

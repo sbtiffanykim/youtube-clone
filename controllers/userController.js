@@ -37,7 +37,7 @@ export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
 });
 
-// GitHub login & logout
+// GitHub login
 export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
@@ -67,16 +67,11 @@ export const postGithubLogIn = (req, res) => {
   res.redirect(routes.home);
 };
 
-// Kakao Login & Logout
+// Kakao Login
 
 export const kakaoLogin = passport.authenticate("kakao");
 
-export const kakaoLoginCallback = async (
-  accessToken,
-  refreshToken,
-  profile,
-  done
-) => {
+export const kakaoLoginCallback = async (_, __, profile, done) => {
   const {
     id,
     username: name,
@@ -106,6 +101,37 @@ export const kakaoLoginCallback = async (
 };
 
 export const postKakaoLogIn = (req, res) => {
+  res.redirect(routes.home);
+};
+
+// Naver Login
+export const naverLogin = passport.authenticate("naver");
+
+export const naverLoginCallback = async (_, __, profile, done) => {
+  const {
+    _json: { email, nickname: name, profile_image, id },
+  } = profile;
+
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      user.naverId = id;
+      user.save();
+      return done(null, user);
+    }
+    const newUser = await User.create({
+      email,
+      name,
+      avatarUrl: profile_image,
+      naverId: id,
+    });
+    return done(null, newUser);
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
+
+export const postNaverLogIn = (req, res) => {
   res.redirect(routes.home);
 };
 
