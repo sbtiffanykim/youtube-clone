@@ -1,6 +1,10 @@
 import passport from "passport";
 import GitHubStrategy from "passport-github";
-import { githubLoginCallback } from "./controllers/userController";
+import KakaoStrategy from "passport-kakao";
+import {
+  githubLoginCallback,
+  kakaoLoginCallback,
+} from "./controllers/userController";
 import routes from "./routes";
 import User from "./models/User";
 
@@ -14,6 +18,16 @@ passport.use(
       redirect_uri: `http://localhost:4000/${routes.githubCallback}`,
     },
     githubLoginCallback
+  )
+);
+
+passport.use(
+  new KakaoStrategy(
+    {
+      clientID: process.env.KAKAO_CLIENT_ID,
+      callbackURL: `http://localhost:4000/${routes.kakaoCallback}`,
+    },
+    kakaoLoginCallback
   )
 );
 
